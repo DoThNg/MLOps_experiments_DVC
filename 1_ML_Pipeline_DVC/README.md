@@ -39,7 +39,7 @@ Proceed with project folder and Run the following commands:
 **Note:**
 - In this practice, the project folder is set up to be a sub-folder (`1_ML_pipeline_DVC`) in the root folder: `MLOps_experiments_DVC` - which is also a git repo. Therefore, the initialization of DVC project will be performed at root directory: `/MLOps_experiments_DVC` rather that at `/MLOps_experiments_DVC/1_ML_Pipeline_DVC`
 
-Run the following command at root directory : `~/MLOps_Experiments`
+Run the following command at root directory : `~/MLOps_experiments_DVC`
 
 ```
 dvc init
