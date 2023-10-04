@@ -24,8 +24,7 @@ Tech stack:
 ---
 ### Workflow in this practice is illustrated by the following:
 
-  ![dvc_workflow](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/docs/dvc_workflow.png)
-
+  ![dvc_workflow](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/1_ML_Pipeline_DVC/docs/dvc_workflow.png)
 ---
 
 ### Steps to run the ML pipeline with dvc:
