@@ -14,7 +14,7 @@ The objective of this practice is to get a reproducible and simple ML pipeline u
 2. **Task 2**: Based on attributes of dataset such as elevation, aspect, slope, hillshade, soil-type, etc, a model will be trained to predict 7 forest cover types.
 3. **Task 3**: The trained model will be then evaluated with different metrics (i.e. accuracy and auc).
 
-Each task above is performed by a corresponding python script file, as provided in the following [~/MLOps_Experiments/1_ML_pipeline_DVC/src](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/src). This workflow will be reproducible using **DVC** - an open-source, Git-based data science tool that applies version control to machine learning development. Further info on DVC can be found in the following: https://dvc.org/
+Each task above is performed by a corresponding python script file, as provided in the following [~/MLOps_experiments_DVC/1_ML_Pipeline_DVC/src](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/src). This workflow will be reproducible using **DVC** - an open-source, Git-based data science tool that applies version control to machine learning development. Further info on DVC can be found in the following: https://dvc.org/
 
 Tech stack:
 - Python 3.10
@@ -37,7 +37,7 @@ Proceed with project folder and Run the following commands:
 **Step 2:** Initialize the DVC-enabled ML project:
 
 **Note:**
-- In this practice, the project folder is set up to be a sub-folder (`1_ML_pipeline_DVC`) in the root folder: `MLOps_Experiments` - which is also a git repo. Therefore, the initialization of DVC project will be performed at root directory: `/MLOps_Experiments` rather that at `/MLOps_Experiments/1_ML_pipeline_DVC`
+- In this practice, the project folder is set up to be a sub-folder (`1_ML_pipeline_DVC`) in the root folder: `MLOps_experiments_DVC` - which is also a git repo. Therefore, the initialization of DVC project will be performed at root directory: `/MLOps_experiments_DVC` rather that at `/MLOps_experiments_DVC/1_ML_Pipeline_DVC`
 
 Run the following command at root directory : `~/MLOps_Experiments`
 
@@ -54,11 +54,11 @@ git commit -m "Initialize DVC"
 
 Further info on initializing a project with DVC can be found in the following: https://dvc.org/doc/start
 
-- Under directory `/MLOps_Experiments/1_ML_pipeline_DVC`, create two sub-folders: `model` (This sub-folder contains trained model (.pkl)) and 'evaluation` (This sub-folder contains plots, model metrics and parameters after each run) 
+- Under directory `/MLOps_experiments_DVC/1_ML_pipeline_DVC`, create two sub-folders: `model` (This sub-folder contains trained model (.pkl)) and 'evaluation` (This sub-folder contains plots, model metrics and parameters after each run) 
 
 **Step 3:** Data Versioning:
-- Go to directory: ~/MLOps_Experiments/1_ML_pipeline_DVC: `cd 1_ML_pipeline_DVC`
-- In the newly-created folder - 1_ML_pipeline_DVC, create a folder named `data` and store the dataset (`covtype.csv`) used in this practice into this folder.
+- Go to directory: ~/MLOps_experiments_DVC/1_ML_Pipeline_DVC: `cd 1_ML_Pipeline_DVC`
+- In the newly-created folder - 1_ML_Pipeline_DVC, create a folder named `data` and store the dataset (`covtype.csv`) used in this practice into this folder.
 - Run the following commands to start tracking the dataset:
 
 ```
@@ -67,9 +67,9 @@ git add 'data\.gitignore' 'data\covtype.csv.dvc'
 git commit -m "Add raw data"
 ```
 
-- In the folder `data`, create a sub-folder named `prepare`. This folder will later contain train, validation and test datasets. 
+- In the folder `data`, create another sub-folder named `prepare`. This folder will later contain train, validation and test datasets. 
 
-**[Optional]** Save the following python file - [create_dataset.py](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/src/create_dataset.py) in the directory `~/MLOps_Experiments/1_ML_pipeline_DVC`. This file can be later used to run the data split process to obtain a well-balanced train, validation and test datasets.
+**[Optional]** Save the following python file - [create_dataset.py](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/src/create_dataset.py) in the directory `~/MLOps_experiments_DVC/1_ML_Pipeline_DVC`. This file can be later used to run the data split process to obtain a well-balanced train, validation and test datasets.
 
 
 - A remote storage can be configured at this step. In the scope of this practice, the implementation is performed locally only, therefore the remote storage is also set up to be a local storage.
@@ -94,11 +94,11 @@ dvc pull
 replace the `[local storage directory]` with a directory in the local machine.
 
 **Step 4**: Set up YAML file containing parameters used in the ML pipeline.
-- Add `params.yaml` in the following directory `~/MLOps_Experiments/1_ML_pipeline_DVC` (Reference: [params.yaml](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/params.yaml))
+- Add `params.yaml` in the following directory `~/MLOps_experiments_DVC/1_ML_Pipeline_DVC` (Reference: [params.yaml](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/params.yaml))
 
 **Step 5:** Add stages in the ML pipeline:
 
-The stages in ML pipeline will be defined by YAML format files (i.e. `.dvc` and `dvc.yaml`). The stages can be created using `dvc stage add` command. Further info can be found in the following: https://dvc.org/doc/start/data-management/data-pipelines. Another way to add stages in the ML pipeline is add these stages directly to a `dvc.yaml` file - which is placed in the following directory `~/MLOps_Experiments/1_ML_pipeline_DVC`. (Reference: [dvc.yaml](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/dvc.yaml))
+The stages in ML pipeline will be defined by YAML format files (i.e. `.dvc` and `dvc.yaml`). The stages can be created using `dvc stage add` command. Further info can be found in the following: https://dvc.org/doc/start/data-management/data-pipelines. Another way to add stages in the ML pipeline is add these stages directly to a `dvc.yaml` file - which is placed in the following directory `~/MLOps_experiments_DVC/1_ML_Pipeline_DVC`. (Reference: [dvc.yaml](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/dvc.yaml))
 
 **Step 6:** Run the ML pipeline:
 
@@ -107,6 +107,6 @@ After stages added, run the following command to run the entire ML pipeline:
 ```
 dvc repro
 ```
-**Note**: Running dvc repro where the dvc.yaml file is located.
+**Note**: Running `dvc repro` where the dvc.yaml file is located.
 
 
