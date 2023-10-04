@@ -1,0 +1,18 @@
+prepare:
+  dir: data/prepare
+  train_file: data_train.csv
+  val_file: data_val.csv
+  test_file: data_test.csv
+  split: 0.20
+  seed: 1
+  random_state: 12
+
+train:
+  dir: model
+  random_state: 0
+  max_depth: 25
+  max_features: sqrt
+  min_samples_split: 5
+
+evaluate:
+  dir: evaluation

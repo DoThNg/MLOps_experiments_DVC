@@ -1,0 +1,44 @@
+stages:
+  prepare_dataset:
+    cmd: python src/data_split.py --data_balance False
+    deps:
+    - src/data_split.py
+    - data/covtype.csv
+    params:
+    - prepare.dir
+    - prepare.train_file
+    - prepare.val_file
+    - prepare.test_file
+    - prepare.split
+    - prepare.seed
+    - prepare.random_state
+    outs:
+    - data/prepare
+
+  train_model:
+    cmd: python src/train.py
+    deps:
+    - data/prepare
+    - src/train.py
+    params:
+    - train.dir
+    - train.random_state
+    - train.max_depth
+    - train.max_features
+    - train.min_samples_split
+    outs:
+    - model/train_model.pkl
+
+  evaluate_model:
+    cmd: python src/evaluate.py
+    deps:
+    - model/train_model.pkl
+    - src/evaluate.py
+    params:
+    - evaluate.dir
+    outs:
+    - evaluation
+metrics:
+- evaluation/metrics.json
+plots:
+- evaluation/feature_importance.png
