@@ -1,0 +1,72 @@
+schema: '2.0'
+stages:
+  prepare_dataset:
+    cmd: python src/data_split.py --data_balance False
+    deps:
+    - path: data/covtype.csv
+      hash: md5
+      md5: e88c3c209db2e8982e07c43462d67c87
+      size: 75170064
+    - path: src/data_split.py
+      hash: md5
+      md5: aded077f99a8acb81e622d589fa8850d
+      size: 3482
+    params:
+      params.yaml:
+        prepare.dir: data/prepare
+        prepare.random_state: 12
+        prepare.seed: 1
+        prepare.split: 0.2
+        prepare.test_file: data_test.csv
+        prepare.train_file: data_train.csv
+        prepare.val_file: data_val.csv
+    outs:
+    - path: data/prepare
+      hash: md5
+      md5: 99e3edc60f7328c787d6dab6872b5aef.dir
+      size: 77223250
+      nfiles: 3
+  train_model:
+    cmd: python src/train.py
+    deps:
+    - path: data/prepare
+      hash: md5
+      md5: 99e3edc60f7328c787d6dab6872b5aef.dir
+      size: 77223250
+      nfiles: 3
+    - path: src/train.py
+      hash: md5
+      md5: b5e1fe931f08c63f728a040b37ec9057
+      size: 1781
+    params:
+      params.yaml:
+        train.dir: model
+        train.max_depth: 25
+        train.max_features: sqrt
+        train.min_samples_split: 5
+        train.random_state: 0
+    outs:
+    - path: model/train_model.pkl
+      hash: md5
+      md5: 756b1fb5fc636e2feebc4bb36a7c5066
+      size: 485569
+  evaluate_model:
+    cmd: python src/evaluate.py
+    deps:
+    - path: model/train_model.pkl
+      hash: md5
+      md5: 756b1fb5fc636e2feebc4bb36a7c5066
+      size: 485569
+    - path: src/evaluate.py
+      hash: md5
+      md5: 891217ebcc644e081e826c15b6ae3e1c
+      size: 2916
+    params:
+      params.yaml:
+        evaluate.dir: evaluation
+    outs:
+    - path: evaluation
+      hash: md5
+      md5: 12879a2254486dea9ecd79d6fbc84aed.dir
+      size: 38384165
+      nfiles: 5
