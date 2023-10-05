@@ -69,9 +69,6 @@ git commit -m "Add raw data"
 
 - In the folder `data`, create another sub-folder named `prepare`. This folder will later contain train, validation and test datasets. 
 
-**[Optional]** Save the following python file - [create_dataset.py](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/1_ML_Pipeline_DVC/src/create_dataset.py) in the directory `~/MLOps_experiments_DVC/1_ML_Pipeline_DVC`. This file can be later used to run the data split process to obtain a well-balanced train, validation and test datasets.
-
-
 - A remote storage can be configured at this step. In the scope of this practice, the implementation is performed locally only, therefore the remote storage is also set up to be a local storage.
 
 ```
