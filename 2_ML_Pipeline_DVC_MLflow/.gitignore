@@ -1,0 +1,7 @@
+raw_data/
+ml_project_tests/
+ml_project.egg-info/
+mlartifacts/
+mlruns/
+model/
+tmp*
