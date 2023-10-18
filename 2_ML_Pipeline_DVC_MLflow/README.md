@@ -18,15 +18,17 @@ The objective of this practice is to build a ML pipeline using **DVC**, **MLFlow
   
 3. **Task 3**: Evaluating the trained model in Task 2 based on metrics (accuracy and auc).
 
-The above workflow will be orchestrated locally with **Dagster** - an orchestrator that's designed for developing and maintaining data assets. Further info on Dagster can be found in the following: https://dagster.io/
-
-In addition, data versioning of ML pipeline will be managed by **DVC** - an open-source, Git-based data science tool that applies version control to machine learning development. Further info on DVC can be found in the following: https://dvc.org/ while mlflow - an open source platform to manage the ML lifecycle will be used to track ML experiments in pipeline (More info on mlflow can be found in the following: https://mlflow.org/).
-
 Tech stack:
 - Python 3.10
 - dvc (3.23.0)
 - dagster (1.5.1)
 - mlflow (2.7.1)
+
+The above workflow will be orchestrated locally with **Dagster** - an orchestrator that's designed for developing and maintaining data assets. Further info on Dagster can be found in the following: https://dagster.io/
+
+In addition, data versioning of ML pipeline will be managed by **DVC** - an open-source, Git-based data science tool that applies version control to machine learning development. Further info on DVC can be found in the following: https://dvc.org/ 
+
+mlflow - an open source platform to manage the ML lifecycle will be used to track ML experiments in pipeline (More info on mlflow can be found in the following: https://mlflow.org/).
 
 ---
 ### Workflow Overview in this practice
