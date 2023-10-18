@@ -3,7 +3,7 @@
 
 ### Introduction
 The objective of this practice is to build a ML pipeline using **DVC**, **MLFlow** and **Dagster**. The workflow includes:
-1. **Task 1**: Preparing dataset (csv files*) for Machine Learning (ML) training and evaluation.
+1. **Task 1**: Preparing dataset (*csv files*) for Machine Learning (ML) training and evaluation.
 
   The dataset (`covertype.csv`) used in this practice contains tree observations from four areas of Roosevelt National Forest of northern Colorado. More info on dataset and variables can be found in the following:  
   https://archive.ics.uci.edu/dataset/31/covertype
