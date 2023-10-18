@@ -50,7 +50,7 @@ In addition, data versioning of datasets used in the ML pipeline will be managed
 **Step 3:** Initialize the DVC-enabled ML project:
 
 **Note:**
-- In this practice, the project folder is set up to be a sub-folder (`2_ML_pipeline_DVC_MLflow`) in the root folder: `MLOps_experiments_DVC` - which is also a git repo. Therefore, the initialization of DVC project will be performed at root directory: `/MLOps_experiments_DVC` rather that at `/MLOps_experiments_DVC/2_ML_pipeline_DVC_MLflow`
+In this practice, the project folder is set up to be a sub-folder (`2_ML_pipeline_DVC_MLflow`) in the root folder: `MLOps_experiments_DVC` - which is also a git repo. Therefore, the initialization of DVC project will be performed at root directory: `/MLOps_experiments_DVC` rather that at `/MLOps_experiments_DVC/2_ML_pipeline_DVC_MLflow`
 
 Run the following command at root directory : `~/MLOps_experiments_DVC`
 
@@ -69,9 +69,8 @@ Go to newly created folder `data` (~/data) and create sub-folders: `prepare` and
 mkdir prepare raw_data
 ```
 
-The folder structure in directory: ~/ml-project as follows:
+The folder structure in directory: `~/ml-project` is as follows:
 ```bash
-C:.
 ├───data
 │   ├───prepare
 │   └───raw_data
