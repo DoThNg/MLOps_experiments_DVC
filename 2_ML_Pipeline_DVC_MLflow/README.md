@@ -13,7 +13,9 @@ The objective of this practice is to build a ML pipeline using **DVC**, **MLFlow
   Blackard,Jock. (1998). Covertype. UCI Machine Learning Repository. https://doi.org/10.24432/C50K5N.
 
   The dataset can be obtained from [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/31/covertype) or [kaggle](https://www.kaggle.com/datasets/uciml/forest-cover-type-dataset/data)
+  
 2. **Task 2**: Training model (Decision Tree) based on datasets in Task 1.
+  
 3. **Task 3**: Evaluating the trained model in Task 2 based on metrics (accuracy and auc).
 
 The above workflow will be orchestrated locally with **Dagster** - an orchestrator that's designed for developing and maintaining data assets. Further info on Dagster can be found in the following: https://dagster.io/
