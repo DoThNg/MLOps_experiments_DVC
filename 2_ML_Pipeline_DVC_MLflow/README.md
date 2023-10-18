@@ -26,9 +26,9 @@ Tech stack:
 
 The above workflow will be orchestrated locally with **Dagster** - an orchestrator that's designed for developing and maintaining data assets. Further info on Dagster can be found in the following: https://dagster.io/
 
-In addition, data versioning of ML pipeline will be managed by **DVC** - an open-source, Git-based data science tool that applies version control to machine learning development. Further info on DVC can be found in the following: https://dvc.org/ 
+In addition, data versioning of datasets used in the ML pipeline will be managed by **DVC** - an open-source, Git-based data science tool that applies version control to machine learning development. Further info on DVC can be found in the following: https://dvc.org/ 
 
-mlflow - an open source platform to manage the ML lifecycle will be used to track ML experiments in pipeline (More info on mlflow can be found in the following: https://mlflow.org/).
+**mlflow** - an open source platform to manage the ML lifecycle will be used to track ML experiments in pipeline (More info on mlflow can be found in the following: https://mlflow.org/).
 
 ---
 ### Workflow Overview in this practice
