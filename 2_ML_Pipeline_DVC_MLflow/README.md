@@ -36,3 +36,50 @@ In addition, data versioning of datasets used in the ML pipeline will be managed
   ![ml_workflow](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/docs/ml_workflow.png)
 
 ---
+
+### Steps to run the ML data pipeline:
+**Step 1:** Set up the virtual environment 
+- Run command: `python -m venv {virtualenv name}`
+
+**Step 2:** Create a Dagster project
+- Run command: `pip install dagster dagster-webserver`
+- Run command: `dagster project scaffold --name ml-project` (dagster will create a project folder named: `ml-project`)
+- Go to `ml-project/setup.py` and add python libraries used in this practice (Reference: [setup.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/setup.py)
+- Go to directort `~/ml-project` and then `pip install -e ".[dev]"` (This will install python library dependencies)
+
+**Step 3:** Initialize the DVC-enabled ML project:
+
+**Note:**
+- In this practice, the project folder is set up to be a sub-folder (`2_ML_pipeline_DVC_MLflow`) in the root folder: `MLOps_experiments_DVC` - which is also a git repo. Therefore, the initialization of DVC project will be performed at root directory: `/MLOps_experiments_DVC` rather that at `/MLOps_experiments_DVC/2_ML_pipeline_DVC_MLflow`
+
+Run the following command at root directory : `~/MLOps_experiments_DVC`
+
+```
+dvc init
+```
+
+**Step 4**: Set up project sub-folders 
+In directory: ~/ml-project create the following sub-folders: data, evaluation and model
+```
+mkdir data evaluation model
+```
+Go to newly created folder `data` (~/data) and create sub-folders: `prepare` and `raw_data`
+
+```
+mkdir prepare raw_data
+```
+
+The folder structure in directory: ~/ml-project as follows:
+```bash
+C:.
+├───data
+│   ├───prepare
+│   └───raw_data
+├───evaluation
+├───ml_project
+└───model
+```
+
+**Step 5**: Add dataset (`covertype.csv`) to raw_data folder (~/ml-project/data/raw_data)
+
+
