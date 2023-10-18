@@ -1,7 +1,8 @@
 /data/raw_data/
 /ml_project_tests/
 /ml_project.egg-info/
-/ml_project/mlartifacts/
-/ml_project/mlruns/
-/ml_project/model/
-/ml_project/tmp*
+/mlartifacts/
+/mlruns/
+/model/
+/tmp*
+/ml_project/__pycache__
