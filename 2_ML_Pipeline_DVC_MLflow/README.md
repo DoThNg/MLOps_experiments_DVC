@@ -40,12 +40,19 @@ In addition, data versioning of datasets used in the ML pipeline will be managed
 ### Steps to run the ML data pipeline:
 **Step 1:** Set up the virtual environment 
 - Run command: `python -m venv {virtualenv name}`
+- Place the file [data_split.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/data_split.py) in the directory where the virtual env is just created.
 
 **Step 2:** Create a Dagster project
 - Run command: `pip install dagster dagster-webserver`
 - Run command: `dagster project scaffold --name ml-project` (dagster will create a project folder named: `ml-project`)
 - Go to `ml-project/setup.py` and add python libraries used in this practice (Reference: [setup.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/setup.py))
 - Go to directort `~/ml-project` and then `pip install -e ".[dev]"` (This will install python library dependencies)
+- Place the following files in directory: `~/ml-project/ml_project`
+  - Workflow: [assets.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/ml_project/assets.py)
+  - Stage 1 (Prepare data): [prepare_data.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/ml_project/prepare_data.py)
+  - Stage 2 (Train model): [train.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/ml_project/train.py)
+  - Stage 3 (Evaluate model): [evaluate.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/ml_project/evaluate.py)
+  - [params.yaml](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/ml_project/params.yaml)
 
 **Step 3:** Initialize the DVC-enabled ML project:
 
@@ -79,6 +86,16 @@ The folder structure in directory: `~/ml-project` is as follows:
 └───model
 ```
 
-**Step 5**: Add dataset (`covertype.csv`) to raw_data folder (~/ml-project/data/raw_data)
+**Step 5**: Prepare raw data
+- Add dataset (`covertype.csv`) to raw_data folder (~/ml-project/data/raw_data)
+- Run the following command (at directory where the `data_split.py` file is located): 
+```
+python data_split.py
+```
+
+This will split dataset (`covertype.csv`) into train, test and validation data in `raw_data` folder 
+
+-
+
 
 
