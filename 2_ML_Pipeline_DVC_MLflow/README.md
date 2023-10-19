@@ -143,7 +143,7 @@ python data_split.py --data_balance True
 
 This will create a balanced train dataset which is saved in folder `~/data/raw_data`. After generating a balanced dataset, **Step 6** can be rerun for the ML pipeline.
 
-Once the pipeline runs successfully, run following command in directory `~/ml-project` for data versioning of the datasets newly created in folder '~/data/prepare`:
+Once the pipeline runs successfully, run following command in directory `~/ml-project` for data versioning of the datasets newly created in folder `~/data/prepare`:
 
 ```
 dvc add `ml-project\data\prepare`
