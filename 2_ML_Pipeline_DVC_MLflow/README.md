@@ -108,7 +108,7 @@ Run command: `mflow ui` (This will launch the MLflow UI at at localhost:5000 in 
 Run command: dagster dev (This will launch the Dagster webserver/UI at localhost:3000 in the browser)
 ```
 
-**Note**: Keep port:5000 active while running dagster dev
+**Note**: Keep port:5000 active while running command: `dagster dev`
 
 After running `dagster dev`, the ML pipeline can be materialized in Dagster webserver/UI
 
