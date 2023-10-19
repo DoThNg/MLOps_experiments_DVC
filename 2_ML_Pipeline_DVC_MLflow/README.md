@@ -39,7 +39,7 @@ In addition, data versioning of datasets used in the ML pipeline will be managed
 
 ### Steps to run the ML data pipeline:
 **Step 1:** Set up the virtual environment 
-- Run command: `python -m venv {virtualenv name}`
+- Run command: `python -m venv {virtualenv name}` and activate virtual environment: `{virtualenv name}\Scripts\activate` (for Windows)
 - Place the file [data_split.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/data_split.py) in the directory where the virtual env is just created.
 
 **Step 2:** Create a Dagster project
