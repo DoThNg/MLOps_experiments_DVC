@@ -65,6 +65,12 @@ Run the following command at root directory : `~/MLOps_experiments_DVC`
 dvc init
 ```
 
+A local storage for dataset in this practice can be also created at this step:
+
+```
+dvc remote add -d [storage name] [directory]
+```
+
 **Step 4**: Set up project sub-folders 
 In directory: ~/ml-project create the following sub-folders: data, evaluation and model
 ```
@@ -95,7 +101,63 @@ python data_split.py
 
 This will split dataset (`covertype.csv`) into train, test and validation data in `raw_data` folder 
 
--
+**Step 6**: Run the ML workflow with dagster
 
+```
+Run command: `mflow ui` (This will launch the MLflow UI at at localhost:5000 in the browser)
+Run command: dagster dev (This will launch the Dagster webserver/UI at localhost:3000 in the browser)
+```
 
+**Note**: Keep port:5000 active while running dagster dev
+
+After running `dagster dev`, the ML pipeline can be materialized in Dagster webserver/UI
+
+  ![run_ml_pipeline](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/docs/dagster_workflow.png)
+
+- The above workflow will generate datasets for ML pipeline at the step: `prepare_data`. Datasets created will be saved in folder '~/data/prepare`.
+- The ML artifacts, params and metrics of this run can be found in MLFlow UI (which is still open at localhost:5000)
+- Run following command in directory `~/ml-project` for data versioning of the datasets in folder '~/data/prepare`:
+
+```
+dvc add `data\prepare`
+git add 'data\.gitignore' 'data\prepare.dvc'
+git commit -m "add dataset, imbalanced train data"
+```
+
+[**Optional**] The trained model can also be tagged and pushed to git as follows:
+
+```
+git tag -a "v1.0" -m "model v1.0 with dagster, mlflow, and imbalanced train data"
+git push origin v1.0
+```
+
+---
+
+[**Optional**] The dataset used to train model in the above steps is imbalanced, illustrated as follows:  
+
+  ![imbalanced_data](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/docs/class_distribution.png)
+
+To address this problem, a more balanced dataset can be used to train model, and the undersampling technique will be used in this regard (This is just for practice of versioning a new dataset with DVC since the ML pipeline running with balanced dataset will later produce a model with a very low performance - undersampling reduces a significant proportion of dataset for training process).
+
+Rerun **Step 5** above with the following argument added:
+```
+python data_split.py --data_balance True
+```
+
+This will create a balanced train dataset which is saved in folder `~/data/raw_data`. After generating a balanced dataset, **Step 6** can be rerun for the ML pipeline.
+
+Once the pipeline run successfully, run following command in directory `~/ml-project` for data versioning of the datasets newly created in folder '~/data/prepare`:
+
+```
+dvc add `data\prepare`
+git add 'data\prepare.dvc'
+git commit -m "Add prepared data with balanced train data"
+```
+
+If the model trained with imbalanced dataset is tagged as v1.0, this newly-created model with balanced dataset can be tagged as v2.0
+
+```
+git tag -a "v2.0" -m "model v2.0 with dagster, mlflow, and balanced train data"
+git push origin v2.0
+```
 
