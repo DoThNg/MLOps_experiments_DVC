@@ -103,14 +103,12 @@ This will split dataset (`covertype.csv`) into train, test and validation data i
 
 **Step 6**: Run the ML workflow with dagster
 
-```
 Run command: `mflow ui` (This will launch the MLflow UI at at localhost:5000 in the browser)
-Run command: dagster dev (This will launch the Dagster webserver/UI at localhost:3000 in the browser)
-```
+Run command: `dagster dev` (This will launch the Dagster webserver/UI at localhost:3000 in the browser)
 
 **Note**: Keep port:5000 active while running command: `dagster dev`
 
-After running `dagster dev`, the ML pipeline can be materialized in Dagster webserver/UI
+After running `dagster dev`, the ML pipeline can be materialized in Dagster webserver/UI.
 
   ![run_ml_pipeline](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/docs/dagster_workflow.png)
 
