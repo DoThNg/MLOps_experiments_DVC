@@ -45,8 +45,8 @@ In addition, data versioning of datasets used in the ML pipeline will be managed
 **Step 2:** Create a Dagster project
 - Run command: `pip install dagster dagster-webserver`
 - Run command: `dagster project scaffold --name ml-project` (dagster will create a project folder named: `ml-project`)
-- Go to `ml-project/setup.py` and add python libraries used in this practice (Reference: [setup.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/setup.py))
-- Go to directort `~/ml-project` and then `pip install -e ".[dev]"` (This will install python library dependencies)
+- Proceed to `ml-project/setup.py` and add python libraries used in this practice (Reference: [setup.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/setup.py))
+- Proceed to directory `~/ml-project` and then `pip install -e ".[dev]"` (This will install python library dependencies)
 - Place the following files in directory: `~/ml-project/ml_project`
   - Workflow: [assets.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/ml_project/assets.py)
   - Stage 1 (Prepare data): [prepare_data.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/ml-project/ml_project/prepare_data.py)
