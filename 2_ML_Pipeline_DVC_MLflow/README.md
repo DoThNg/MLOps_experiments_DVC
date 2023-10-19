@@ -114,11 +114,11 @@ After running `dagster dev`, the ML pipeline can be materialized in Dagster webs
 
 - The above workflow will generate datasets for ML pipeline at the step: `prepare_data`. Datasets created will be saved in folder '~/data/prepare`.
 - The ML artifacts, params and metrics of this run can be found in MLFlow UI (which is still open at localhost:5000)
-- Run following command in directory `~/ml-project` for data versioning of the datasets in folder '~/data/prepare`:
+- Run following command in directory where the virtual env is created (in this pratice, the directory is `~/2_ML_Pipeline_DVC_MLflow/`) for data versioning of the datasets in folder `~/2_ML_Pipeline_DVC_MLflow/ml-project/data/prepare`:
 
 ```
-dvc add `data\prepare`
-git add 'data\.gitignore' 'data\prepare.dvc'
+dvc add 'ml-project\data\prepare'
+git add 'ml-project\data\.gitignore' 'ml-project\data\prepare.dvc'
 git commit -m "add dataset, imbalanced train data"
 ```
 
@@ -126,7 +126,6 @@ git commit -m "add dataset, imbalanced train data"
 
 ```
 git tag -a "v1.0" -m "model v1.0 with dagster, mlflow, and imbalanced train data"
-git push origin v1.0
 ```
 
 ---
@@ -147,8 +146,8 @@ This will create a balanced train dataset which is saved in folder `~/data/raw_d
 Once the pipeline runs successfully, run following command in directory `~/ml-project` for data versioning of the datasets newly created in folder '~/data/prepare`:
 
 ```
-dvc add `data\prepare`
-git add 'data\prepare.dvc'
+dvc add `ml-project\data\prepare`
+git add 'ml-project\data\prepare.dvc'
 git commit -m "Add prepared data with balanced train data"
 ```
 
@@ -156,6 +155,11 @@ If the model trained with imbalanced dataset is tagged as v1.0, this newly-creat
 
 ```
 git tag -a "v2.0" -m "model v2.0 with dagster, mlflow, and balanced train data"
-git push origin v2.0
 ```
 
+**Note**:  To switch back to datasets v1.0 (imbalanced train dataset), run the following command:
+
+```
+git checkout v1.0
+dvc checkout 'ml-project\data\prepare.dvc'
+```
