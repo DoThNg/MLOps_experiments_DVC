@@ -122,7 +122,7 @@ git add 'ml-project\data\.gitignore' 'ml-project\data\prepare.dvc'
 git commit -m "add dataset, imbalanced train data"
 ```
 
-[**Optional**] The trained model can also be tagged and pushed to git as follows:
+[**Optional**] The trained model can also be tagged as follows:
 
 ```
 git tag -a "v1.0" -m "model v1.0 with dagster, mlflow, and imbalanced train data"
