@@ -43,8 +43,6 @@ def evaluate_ml_model(train_ml_model):
     feature_importance = model_clf.feature_importances_
     sorted_idx = np.argsort(feature_importance)
     
-    fig_feature, axs = plt.subplots(1)
-
     fig_feature, axs = plt.subplots(1, figsize = (15, 6))
     fig_feature.suptitle('Feature Importance')
 
