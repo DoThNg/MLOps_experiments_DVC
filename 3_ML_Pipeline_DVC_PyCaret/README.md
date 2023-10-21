@@ -84,5 +84,6 @@ After running `dagster dev`, the ML pipeline can be materialized in Dagster webs
 ---
 [**Optional**] Practice of data versioning with DVC
 
-Refer to this [Section](https://github.com/DoThNg/MLOps_experiments_DVC/edit/main/2_ML_Pipeline_DVC_MLflow/README.md)
+- Place the file [data_split.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/data_split.py) in the directory where the virtual env is just created.
+- Refer to this [Section](https://github.com/DoThNg/MLOps_experiments_DVC/edit/main/2_ML_Pipeline_DVC_MLflow/README.md)
 
