@@ -49,7 +49,7 @@ Steps are largely the same as those in this [practice](https://github.com/DoThNg
 - Additionally, at this step, run the following command: `pip install pycaret==3.1.0`
 - Place the file [data_split.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/data_split.py) in the directory where the virtual env is just created.
 
-**Step 2:** Create a Dagster project
+**Step 2:** Create a Dagster project:
 Refer to this [Step 2](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/README.md).
 
 **Step 3:** Initialize the DVC-enabled ML project:
@@ -75,7 +75,7 @@ python data_split.py
 
 **Note**: This will split dataset (`covertype.csv`) into train and test datasets in `raw_data` folder. Pycaret will later split the train dataset into 2 other sub-sets and train models based on this split. The test dataset can be used to evaluate the best trained model generated from running auto ml process with pycaret.  
 
-**Step 6**: Run the ML workflow with dagster
+**Step 6**: Run the ML workflow with dagster:
 Refer to this [Step 6](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/README.md)
 
 After running `dagster dev`, the ML pipeline can be materialized in Dagster webserver/UI as follows:
