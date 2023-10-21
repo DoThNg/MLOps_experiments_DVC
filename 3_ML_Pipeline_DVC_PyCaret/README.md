@@ -8,7 +8,7 @@ This is a follow-up practice for this [experiment](https://github.com/DoThNg/MLO
 - **Pycare**: an open-source, low-code machine learning library for automation of machine learning workflows (More info on Pycaret can be found in the following: https://pycaret.gitbook.io/docs/). In this experiment, pycaret will be used to automate ML training and evaluation process. 
 - **Dagster**: an orchestrator that's designed for developing and maintaining data assets. Further info on Dagster can be found in the following: https://dagster.io/
 
-- The workflow in this practice includes:
+The workflow in this practice includes:
 1. **Task 1**: Preparing dataset (*csv files*) for Machine Learning (ML) training and evaluation.
 
   The dataset (`covertype.csv`) used in this practice contains tree observations from four areas of Roosevelt National Forest of northern Colorado. More info on dataset and variables can be found in the following:  
