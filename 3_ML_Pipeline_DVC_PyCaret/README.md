@@ -35,6 +35,7 @@ Tech stack:
 
 ---
 ### Workflow Overview in this practice
+
   ![ml_workflow](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/docs/ml_workflow.png)
 
 ---
