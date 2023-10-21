@@ -57,7 +57,7 @@ Steps are largely the same as those in this [practice](https://github.com/DoThNg
 - Place the following files in directory: `~/ml-project/ml_project`
   - Workflow: [assets.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/assets.py)
   - Stage 1 (Prepare data): [prepare_data.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/prepare_data.py)
-  - Stage 2 (Train model): code for this stage is included in [assets.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/assets.py)
+  - Stage 2 (Train model): The code for this stage is included in [assets.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/assets.py)
   - Stage 3 (Evaluate model): [evaluate.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/evaluate.py)
   - [params.yaml](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/params.yaml)
 
