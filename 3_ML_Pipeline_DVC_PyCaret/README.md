@@ -31,11 +31,10 @@ Tech stack:
 - mlflow (2.7.1)
 - dagster (1.5.1)
 
-**Note**: The above workflow is similar to that in this [experiment](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/2_ML_Pipeline_DVC_MLflow). The main difference is step 2 of workflow where element of **auto ML** is introduced, using Pycaret. At this step, 2 ML models (decision tree and random forest) are set in advance, and other steps including data splitting, data preproceesing, model training and evaluation will be handled by Pycaret (All results at this step will be logged, using MLflow).   
+**Note**: The above workflow is similar to that in this [experiment](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/2_ML_Pipeline_DVC_MLflow). The main difference is at step 2 of workflow, where the element of **auto ML** is introduced, using Pycaret library. At this step, 2 ML models (decision tree and random forest) are set in advance, and other steps including data splitting, data preproceesing, model training and evaluation will be handled by Pycaret (All results at this step will be logged, using MLflow).   
 
 ---
 ### Workflow Overview in this practice
-
   ![ml_workflow](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/docs/ml_workflow.png)
 
 ---
