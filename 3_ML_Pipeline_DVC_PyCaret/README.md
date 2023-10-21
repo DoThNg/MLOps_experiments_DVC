@@ -2,7 +2,7 @@
 ---
 
 ### Introduction
-This is a follow-up practice for this [experiment](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/2_ML_Pipeline_DVC_MLflow). The objective is to build a Machine Learning (ML) pipeline to predict forest cover types, using the following:
+This is an extension of this [experiment](https://github.com/DoThNg/MLOps_experiments_DVC/tree/main/2_ML_Pipeline_DVC_MLflow). The objective is to build a Machine Learning (ML) pipeline to predict forest cover types, using the following:
 - **DVC**: an open-source, Git-based data science tool that applies version control to machine learning development. Further info on DVC can be found in the following: https://dvc.org/. DVC will be used for data versioning in this experiment.
 - **MLFlow**: an open source platform to manage the ML lifecycle will be used to track ML experiments in pipeline (More info on mlflow can be found in the following: https://mlflow.org/). MLFLow will be used for ML experiment tracking in this practice.
 - **Pycare**: an open-source, low-code machine learning library for automation of machine learning workflows (More info on Pycaret can be found in the following: https://pycaret.gitbook.io/docs/). In this experiment, pycaret will be used to automate ML training and evaluation process. 
@@ -50,7 +50,16 @@ Steps are largely the same as those in this [practice](https://github.com/DoThNg
 - Place the file [data_split.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/data_split.py) in the directory where the virtual env is just created.
 
 **Step 2:** Create a Dagster project:
-Refer to this [Step 2](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/README.md).
+- Run command: `pip install dagster dagster-webserver`
+- Run command: `dagster project scaffold --name ml-project` (dagster will create a project folder named: `ml-project`)
+- Proceed to `ml-project/setup.py` and add python libraries used in this practice (Reference: [setup.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/setup.py))
+- Proceed to directory `~/ml-project` and then `pip install -e ".[dev]"` (This will install python library dependencies)
+- Place the following files in directory: `~/ml-project/ml_project`
+  - Workflow: [assets.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/assets.py)
+  - Stage 1 (Prepare data): [prepare_data.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/prepare_data.py)
+  - Stage 2 (Train model): code for this stage is included in [assets.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/assets.py)
+  - Stage 3 (Evaluate model): [evaluate.py](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/evaluate.py)
+  - [params.yaml](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/3_ML_Pipeline_DVC_PyCaret/ml-project/ml_project/params.yaml)
 
 **Step 3:** Initialize the DVC-enabled ML project:
 Refer to this [Step 3](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/README.md)
