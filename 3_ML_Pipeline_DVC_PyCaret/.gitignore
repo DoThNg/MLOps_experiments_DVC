@@ -1,9 +1,9 @@
 ml-project/logs.log
-ml-project/model/
+ml-project/model/*pkl
 ml-project/ml_project_tests
 ml-project/ml_project.egg-info
 ml-project/mlruns
-ml-project/data/prepare/*csv
-ml-project/data/raw_data/*csv
+ml-project/data/prepare/
+ml-project/data/raw_data/
 ml-project/ml_project/__pycache__
 dvc_env
