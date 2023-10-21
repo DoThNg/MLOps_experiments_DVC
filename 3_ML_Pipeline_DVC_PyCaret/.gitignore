@@ -1,5 +1,5 @@
 ml-project/logs.log
-ml-project/model/*pkl
+ml-project/model/
 ml-project/ml_project_tests
 ml-project/ml_project.egg-info
 ml-project/mlruns
