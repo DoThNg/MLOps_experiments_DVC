@@ -1,0 +1,4 @@
+prepare:
+  dir: data/prepare
+  train_file: data_train.csv
+  test_file: data_test.csv
