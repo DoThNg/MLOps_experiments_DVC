@@ -1,4 +1,3 @@
-# import pickle
 from pycaret.classification import load_model, predict_model
 from sklearn.metrics import accuracy_score, roc_auc_score, ConfusionMatrixDisplay
 import pandas as pd
