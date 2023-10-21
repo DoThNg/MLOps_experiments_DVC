@@ -94,5 +94,5 @@ After running `dagster dev`, the ML pipeline can be materialized in Dagster webs
 ---
 [**Optional**] Practice of data versioning with DVC
 
-Refer to this Optional [Section](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/README.md) in 2_ML_Pipeline_DVC_Workflow.
+Refer to this [Optional Section](https://github.com/DoThNg/MLOps_experiments_DVC/blob/main/2_ML_Pipeline_DVC_MLflow/README.md) in 2_ML_Pipeline_DVC_Workflow.
 
