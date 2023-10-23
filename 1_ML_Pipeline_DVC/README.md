@@ -4,13 +4,6 @@
 ### Introduction
 The objective of this practice is to get a reproducible and simple ML pipeline up and running quickly using **DVC**. The workflow includes:
 1. **Task 1**: Preparing data (data split into train, validation and test datasets). The dataset (`covertype.csv`) used in this practice contains tree observations from four areas of Roosevelt National Forest of northern Colorado. More info on dataset and variables can be found in the following: https://archive.ics.uci.edu/dataset/31/covertype
-
-  **Acknowledgement**:
-
-  Blackard,Jock. (1998). Covertype. UCI Machine Learning Repository. https://doi.org/10.24432/C50K5N.
-
-  The dataset can be obtained from [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/31/covertype) or [kaggle](https://www.kaggle.com/datasets/uciml/forest-cover-type-dataset/data)
-
 2. **Task 2**: Based on attributes of dataset such as elevation, aspect, slope, hillshade, soil-type, etc, a model will be trained to predict 7 forest cover types.
 3. **Task 3**: The trained model will be then evaluated with different metrics (i.e. accuracy and auc).
 
