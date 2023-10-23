@@ -4,18 +4,8 @@
 ### Introduction
 The objective of this practice is to build a ML pipeline to predict forest cover types, using **DVC**, **MLFlow** and **Dagster**. The workflow includes:
 1. **Task 1**: Preparing dataset (*csv files*) for Machine Learning (ML) training and evaluation.
-
-  The dataset (`covertype.csv`) used in this practice contains tree observations from four areas of Roosevelt National Forest of northern Colorado. More info on dataset and variables can be found in the following:  
-  https://archive.ics.uci.edu/dataset/31/covertype
-
-  **Acknowledgement**:
-
-  Blackard,Jock. (1998). Covertype. UCI Machine Learning Repository. https://doi.org/10.24432/C50K5N.
-
-  The dataset can be obtained from [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/31/covertype) or [kaggle](https://www.kaggle.com/datasets/uciml/forest-cover-type-dataset/data)
-  
+The dataset (`covertype.csv`) used in this practice contains tree observations from four areas of Roosevelt National Forest of northern Colorado. More info on dataset and variables can be found in the following: https://archive.ics.uci.edu/dataset/31/covertype  
 2. **Task 2**: Training model (Decision Tree) based on datasets in Task 1.
-  
 3. **Task 3**: Evaluating the trained model in Task 2 based on metrics (accuracy and auc).
 
 Tech stack:
