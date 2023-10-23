@@ -9,19 +9,8 @@ This is an extension of this [experiment](https://github.com/DoThNg/MLOps_experi
 - **Dagster**: an orchestrator that's designed for developing and maintaining data assets. Further info on Dagster can be found in the following: https://dagster.io/
 
 The workflow in this practice includes:
-1. **Task 1**: Preparing dataset (*csv files*) for Machine Learning (ML) training and evaluation.
-
-  The dataset (`covertype.csv`) used in this practice contains tree observations from four areas of Roosevelt National Forest of northern Colorado. More info on dataset and variables can be found in the following:  
-  https://archive.ics.uci.edu/dataset/31/covertype
-
-  **Acknowledgement**:
-
-  Blackard,Jock. (1998). Covertype. UCI Machine Learning Repository. https://doi.org/10.24432/C50K5N.
-
-  The dataset can be obtained from [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/31/covertype) or [kaggle](https://www.kaggle.com/datasets/uciml/forest-cover-type-dataset/data)
-  
+1. **Task 1**: Preparing dataset (*csv files*) for Machine Learning (ML) training and evaluation (The dataset (`covertype.csv`) used in this practice contains tree observations from four areas of Roosevelt National Forest of northern Colorado)  
 2. **Task 2**: Using Pycaret for a auto ML process based on datasets in Task 1.
-  
 3. **Task 3**: Evaluating the best trained model in Task 2 based on metrics (accuracy and auc).
 
 Tech stack:
