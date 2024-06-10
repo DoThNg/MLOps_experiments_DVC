@@ -7,7 +7,7 @@ setup(
         "dagster",
         "dagster-cloud",
         "dagster-webserver",
-        "mlflow==2.7.1",
+        "mlflow==~>2.8.1",
         "pandas==1.5.3",
         "scikit-learn==1.3.0",
     ],
