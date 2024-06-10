@@ -12,7 +12,7 @@ Tech stack:
 - Python 3.10
 - dvc (3.23.0)
 - dagster (1.5.1)
-- mlflow (2.7.1)
+- mlflow (~> 2.8.1)
 
 The above workflow will be orchestrated locally with **Dagster** - an orchestrator that's designed for developing and maintaining data assets. Further info on Dagster can be found in the following: https://dagster.io/
 
